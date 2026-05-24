@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services | AutoCare Hub</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"><i class="fas fa-car-side"></i></span>
+        <span class="logo-text">AutoCare<span class="accent">Hub</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="track-service.html">Track Service</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+      <div class="nav-user-menu" id="userMenu">
+        <a href="login.html" class="user-icon" id="userIcon">
+          👤
+        </a>
+        <div class="user-dropdown" id="userDropdown">
+          <div class="user-info">
+            <span id="userName">Guest</span>
+            <small id="userEmail">Not logged in</small>
+          </div>
+          <div class="user-actions">
+            <a href="dashboard.html" class="dropdown-item" id="dashboardLink" style="display:none">
+              <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="#" class="dropdown-item" id="logoutBtn" style="display:none">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+            <a href="login.html" class="dropdown-item" id="loginBtn">
+              <i class="fas fa-sign-in-alt"></i> Login
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="contact.html" class="nav-cta">Book Now</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <span class="section-tag">What We Offer</span>
+      <h1>Our <span class="gradient-text">Services</span></h1>
+      <p>Comprehensive vehicle care solutions tailored to every need and budget.</p>
+    </div>
+  </section>
+
+  <!-- VEHICLE SERVICING -->
+  <section class="service-detail section" id="servicing">
+    <div class="container">
+      <div class="detail-grid">
+        <div class="detail-icon-block">
+          <div class="big-icon-wrap"><i class="fas fa-wrench"></i></div>
+          <div class="detail-badge">Most Popular</div>
+        </div>
+        <div class="detail-text">
+          <span class="section-tag">Mechanical</span>
+          <h2>Vehicle <span class="gradient-text">Servicing</span></h2>
+          <p>Keep your vehicle running at peak performance with our comprehensive servicing packages. Our certified technicians use the latest diagnostic equipment to ensure everything is working perfectly.</p>
+          <div class="service-items">
+            <div class="si"><i class="fas fa-oil-can"></i><div><strong>Engine Oil & Filter Change</strong><span>Full synthetic, semi-synthetic or conventional</span></div></div>
+            <div class="si"><i class="fas fa-circle"></i><div><strong>Brake System Check</strong><span>Pads, discs, fluid & calliper inspection</span></div></div>
+            <div class="si"><i class="fas fa-battery-full"></i><div><strong>Battery & Electrical Test</strong><span>Full electrical system diagnostics</span></div></div>
+            <div class="si"><i class="fas fa-temperature-high"></i><div><strong>Cooling System Service</strong><span>Coolant flush, thermostat & radiator check</span></div></div>
+            <div class="si"><i class="fas fa-gear"></i><div><strong>Transmission Service</strong><span>Fluid change & gearbox inspection</span></div></div>
+            <div class="si"><i class="fas fa-filter"></i><div><strong>Air & Cabin Filter</strong><span>Replacement & airflow optimization</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXTERIOR CLEANING -->
+  <section class="service-detail section alt-bg" id="exterior">
+    <div class="container">
+      <div class="detail-grid reverse">
+        <div class="detail-text">
+          <span class="section-tag">Detailing</span>
+          <h2>Exterior <span class="gradient-text">Cleaning</span></h2>
+          <p>Make your vehicle shine like new with our professional exterior cleaning and detailing services. We use premium products and techniques to protect and enhance your car's finish.</p>
+          <div class="service-items">
+            <div class="si"><i class="fas fa-soap"></i><div><strong>Premium Hand Wash</strong><span>pH-neutral foam wash & rinse</span></div></div>
+            <div class="si"><i class="fas fa-star"></i><div><strong>Wax & Polish</strong><span>Carnauba wax protection & shine</span></div></div>
+            <div class="si"><i class="fas fa-shield-halved"></i><div><strong>Paint Protection Film</strong><span>Scratch & chip resistant coating</span></div></div>
+            <div class="si"><i class="fas fa-sparkles"></i><div><strong>Scratch Removal</strong><span>Machine compound & paint correction</span></div></div>
+            <div class="si"><i class="fas fa-circle-dot"></i><div><strong>Tyre Dressing</strong><span>Hydrating dressing for tyre shine</span></div></div>
+            <div class="si"><i class="fas fa-window-maximize"></i><div><strong>Glass Treatment</strong><span>Rain repellent & crystal clear finish</span></div></div>
+          </div>
+        </div>
+        <div class="detail-icon-block">
+          <div class="big-icon-wrap teal"><i class="fas fa-spray-can-sparkles"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERIOR CLEANING -->
+  <section class="service-detail section" id="interior">
+    <div class="container">
+      <div class="detail-grid">
+        <div class="detail-icon-block">
+          <div class="big-icon-wrap purple"><i class="fas fa-couch"></i></div>
+        </div>
+        <div class="detail-text">
+          <span class="section-tag">Interior</span>
+          <h2>Interior <span class="gradient-text">Cleaning</span></h2>
+          <p>Transform the inside of your vehicle with our thorough interior cleaning and restoration service. Every corner, every surface — spotlessly clean.</p>
+          <div class="service-items">
+            <div class="si"><i class="fas fa-vacuum"></i><div><strong>Deep Vacuum</strong><span>Seats, carpets, boot & all crevices</span></div></div>
+            <div class="si"><i class="fas fa-couch"></i><div><strong>Seat Shampoo</strong><span>Fabric, leather & suede treatment</span></div></div>
+            <div class="si"><i class="fas fa-gauge-high"></i><div><strong>Dashboard Polish</strong><span>UV-protective interior trim dressing</span></div></div>
+            <div class="si"><i class="fas fa-wind"></i><div><strong>AC Vent Cleaning</strong><span>Dust removal & antibacterial spray</span></div></div>
+            <div class="si"><i class="fas fa-nose"></i><div><strong>Odor Elimination</strong><span>Ozone treatment & fragrance</span></div></div>
+            <div class="si"><i class="fas fa-car-on"></i><div><strong>Headliner Cleaning</strong><span>Stain removal & fabric freshening</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GENERAL REPAIRS -->
+  <section class="service-detail section alt-bg" id="repairs">
+    <div class="container">
+      <div class="detail-grid reverse">
+        <div class="detail-text">
+          <span class="section-tag">Repairs</span>
+          <h2>General <span class="gradient-text">Repairs</span></h2>
+          <p>From minor fixes to major overhauls, our experienced mechanics handle all types of vehicle repairs with precision and care. We get you back on the road safely.</p>
+          <div class="service-items">
+            <div class="si"><i class="fas fa-engine"></i><div><strong>Engine Repairs</strong><span>Diagnostics, rebuilds & replacements</span></div></div>
+            <div class="si"><i class="fas fa-bolt"></i><div><strong>Electrical Diagnostics</strong><span>ECU scanning & wiring repair</span></div></div>
+            <div class="si"><i class="fas fa-wind"></i><div><strong>AC Servicing</strong><span>Regas, compressor & leak repair</span></div></div>
+            <div class="si"><i class="fas fa-circle"></i><div><strong>Tyre Replacement</strong><span>All brands, balancing & alignment</span></div></div>
+            <div class="si"><i class="fas fa-car-crash"></i><div><strong>Suspension Repair</strong><span>Shock absorbers, bushings & alignment</span></div></div>
+            <div class="si"><i class="fas fa-fire-flame-curved"></i><div><strong>Exhaust System</strong><span>Muffler, catalytic converter service</span></div></div>
+          </div>
+        </div>
+        <div class="detail-icon-block">
+          <div class="big-icon-wrap orange"><i class="fas fa-screwdriver-wrench"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pricing</span>
+        <h2>Transparent <span class="gradient-text">Packages</span></h2>
+        <p>Choose a package that suits your needs. No hidden fees, ever.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-header">
+            <h3>Basic</h3>
+            <div class="price">Rs. 3,500<span>/service</span></div>
+          </div>
+          <ul class="price-list">
+            <li><i class="fas fa-check"></i> Oil & Filter Change</li>
+            <li><i class="fas fa-check"></i> Basic Exterior Wash</li>
+            <li><i class="fas fa-check"></i> Tyre Pressure Check</li>
+            <li><i class="fas fa-check"></i> Visual Inspection</li>
+            <li class="dim"><i class="fas fa-times"></i> Interior Cleaning</li>
+            <li class="dim"><i class="fas fa-times"></i> Full Diagnostics</li>
+          </ul>
+          <a href="contact.html" class="btn-ghost" style="width:100%;text-align:center">Book Now</a>
+        </div>
+        <div class="price-card featured">
+          <div class="popular-tag">Most Popular</div>
+          <div class="price-header">
+            <h3>Premium</h3>
+            <div class="price">Rs. 8,500<span>/service</span></div>
+          </div>
+          <ul class="price-list">
+            <li><i class="fas fa-check"></i> Full Service Package</li>
+            <li><i class="fas fa-check"></i> Exterior Detail & Wax</li>
+            <li><i class="fas fa-check"></i> Interior Deep Clean</li>
+            <li><i class="fas fa-check"></i> Electronic Diagnostics</li>
+            <li><i class="fas fa-check"></i> AC Check</li>
+            <li class="dim"><i class="fas fa-times"></i> Paint Correction</li>
+          </ul>
+          <a href="contact.html" class="btn-primary" style="width:100%;text-align:center">Book Now</a>
+        </div>
+        <div class="price-card">
+          <div class="price-header">
+            <h3>Ultimate</h3>
+            <div class="price">Rs. 15,000<span>/service</span></div>
+          </div>
+          <ul class="price-list">
+            <li><i class="fas fa-check"></i> Everything in Premium</li>
+            <li><i class="fas fa-check"></i> Paint Correction</li>
+            <li><i class="fas fa-check"></i> Ceramic Coating</li>
+            <li><i class="fas fa-check"></i> Leather Treatment</li>
+            <li><i class="fas fa-check"></i> Ozone Treatment</li>
+            <li><i class="fas fa-check"></i> Priority Booking</li>
+          </ul>
+          <a href="contact.html" class="btn-ghost" style="width:100%;text-align:center">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="cta-bg"></div>
+    <div class="cta-content">
+      <h2>Not Sure Which Service? <span class="gradient-text">Ask Us!</span></h2>
+      <p>Contact our team and we'll recommend the perfect package for your vehicle.</p>
+      <a href="contact.html" class="btn-white">Get in Touch <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-car-side"></i></span><span class="logo-text">AutoCare<span class="accent">Hub</span></span></a>
+        <p>Your trusted partner for all vehicle care needs.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#servicing">Vehicle Servicing</a></li>
+          <li><a href="#exterior">Exterior Cleaning</a></li>
+          <li><a href="#interior">Interior Cleaning</a></li>
+          <li><a href="#repairs">General Repairs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><i class="fas fa-phone"></i> +94 75 396 6006</li>
+          <li><i class="fas fa-envelope"></i> info@autocarehub.lk</li>
+          <li><i class="fas fa-location-dot"></i> Colombo 05, Sri Lanka</li>
+          <li><i class="fas fa-clock"></i> Mon–Sat: 8AM – 6PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 AutoCare Hub. All rights reserved.</p></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

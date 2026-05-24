@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoCare Hub | Premium Vehicle Services</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"><i class="fas fa-car-side"></i></span>
+        <span class="logo-text">AutoCare<span class="accent">Hub</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="track-service.html">Track Service</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+      <div class="nav-user-menu" id="userMenu">
+        <a href="login.html" class="user-icon" id="userIcon">
+          👤
+        </a>
+        <div class="user-dropdown" id="userDropdown">
+          <div class="user-info">
+            <span id="userName">Guest</span>
+            <small id="userEmail">Not logged in</small>
+          </div>
+          <div class="user-actions">
+            <a href="dashboard.html" class="dropdown-item" id="dashboardLink" style="display:none">
+              <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="#" class="dropdown-item" id="logoutBtn" style="display:none">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+            <a href="login.html" class="dropdown-item" id="loginBtn">
+              <i class="fas fa-sign-in-alt"></i> Login
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="contact.html" class="nav-cta">Book Now</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-glow g1"></div>
+      <div class="hero-glow g2"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-shield-halved"></i> Trusted Vehicle Care</div>
+      <h1 class="hero-title">Your Car Deserves<br/><span class="gradient-text">The Best Care</span></h1>
+      <p class="hero-sub">Professional vehicle servicing, interior & exterior cleaning, and comprehensive maintenance — all under one roof.</p>
+      <div class="hero-actions">
+        <a href="services.html" class="btn-primary">Explore Services <i class="fas fa-arrow-right"></i></a>
+        <a href="contact.html" class="btn-ghost">Book Appointment</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">5K+</span><span class="stat-label">Happy Customers</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Satisfaction</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="car-card">
+        <div class="car-image-wrap">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=400&fit=crop" alt="Luxury Car" class="car-image"/>
+        </div>
+        <div class="car-pulse"></div>
+        <div class="floating-badge fb1"><i class="fas fa-star"></i> 5.0 Rating</div>
+        <div class="floating-badge fb2"><i class="fas fa-check-circle"></i> Certified</div>
+        <div class="floating-badge fb3"><i class="fas fa-bolt"></i> Fast Service</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="services-preview section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Do</span>
+        <h2>Our Core <span class="gradient-text">Services</span></h2>
+        <p>From diagnostics to detailing — we handle everything your vehicle needs.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-aos>
+          <div class="service-icon"><i class="fas fa-wrench"></i></div>
+          <h3>Vehicle Servicing</h3>
+          <p>Full mechanical inspections, oil changes, brake checks, engine tune-ups and all routine maintenance.</p>
+          <a href="services.html" class="card-link">Learn More <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="service-card featured" data-aos>
+          <div class="service-icon"><i class="fas fa-spray-can-sparkles"></i></div>
+          <h3>Exterior Cleaning</h3>
+          <p>Hand wash, wax polish, paint protection film, scratch removal and full exterior detailing packages.</p>
+          <a href="services.html" class="card-link">Learn More <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="service-card" data-aos>
+          <div class="service-icon"><i class="fas fa-couch"></i></div>
+          <h3>Interior Cleaning</h3>
+          <p>Deep vacuum, seat shampooing, dashboard polish, odor elimination and complete interior restoration.</p>
+          <a href="services.html" class="card-link">Learn More <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="service-card" data-aos>
+          <div class="service-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+          <h3>General Repairs</h3>
+          <p>Engine repairs, electrical diagnostics, AC servicing, tire replacement and all major vehicle repairs.</p>
+          <a href="services.html" class="card-link">Learn More <i class="fas fa-chevron-right"></i></a>
+        </div>
+      </div>
+      <div class="center-btn">
+        <a href="services.html" class="btn-primary">View All Services <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why-us section">
+    <div class="container why-grid">
+      <div class="why-text">
+        <span class="section-tag">Why Choose Us</span>
+        <h2>Precision. Quality.<br/><span class="gradient-text">Every Time.</span></h2>
+        <p>At AutoCare Hub, we combine years of expertise with modern equipment to deliver results that exceed expectations.</p>
+        <ul class="why-list">
+          <li><i class="fas fa-circle-check"></i> Factory-trained certified technicians</li>
+          <li><i class="fas fa-circle-check"></i> Genuine OEM parts & premium products</li>
+          <li><i class="fas fa-circle-check"></i> Real-time service tracking updates</li>
+          <li><i class="fas fa-circle-check"></i> Transparent pricing — no hidden costs</li>
+          <li><i class="fas fa-circle-check"></i> 30-day service guarantee</li>
+        </ul>
+        <a href="about.html" class="btn-primary" style="margin-top:2rem">About Us <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="why-cards">
+        <div class="mini-card mc1"><i class="fas fa-clock"></i><span>Quick Turnaround</span></div>
+        <div class="mini-card mc2"><i class="fas fa-shield-halved"></i><span>Fully Insured</span></div>
+        <div class="mini-card mc3"><i class="fas fa-star"></i><span>5-Star Reviews</span></div>
+        <div class="mini-card mc4"><i class="fas fa-tools"></i><span>Latest Equipment</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Reviews</span>
+        <h2>What Our <span class="gradient-text">Customers Say</span></h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>"Amazing service! My car looks brand new after the full detailing package. Will definitely be coming back!"</p>
+          <div class="testi-author"><div class="author-avatar">NK</div><div><strong>Nimal Karunaratne</strong><span>Toyota Aqua Owner</span></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>"Fast, professional and honest. They explained everything clearly and the price was very fair. Highly recommend!"</p>
+          <div class="testi-author"><div class="author-avatar">SP</div><div><strong>Sanduni Perera</strong><span>Honda Fit Owner</span></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>"The interior cleaning was exceptional. Removed all stains and now smells fresh. Great team, great work!"</p>
+          <div class="testi-author"><div class="author-avatar">RD</div><div><strong>Ruwan Dissanayake</strong><span>Suzuki Swift Owner</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-bg"></div>
+    <div class="cta-content">
+      <h2>Ready to Give Your Car the <span class="gradient-text">Best Treatment?</span></h2>
+      <p>Book your appointment today and experience the AutoCare Hub difference.</p>
+      <a href="contact.html" class="btn-white">Book Appointment <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-car-side"></i></span><span class="logo-text">AutoCare<span class="accent">Hub</span></span></a>
+        <p>Your trusted partner for all vehicle care needs. Quality service, every time.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Vehicle Servicing</a></li>
+          <li><a href="services.html">Exterior Cleaning</a></li>
+          <li><a href="services.html">Interior Cleaning</a></li>
+          <li><a href="services.html">General Repairs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><i class="fas fa-phone"></i> +94 75 396 6006</li>
+          <li><i class="fas fa-envelope"></i> info@autocarehub.lk</li>
+          <li><i class="fas fa-location-dot"></i> Colombo 05, Sri Lanka</li>
+          <li><i class="fas fa-clock"></i> Mon–Sat: 8AM – 6PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 AutoCare Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

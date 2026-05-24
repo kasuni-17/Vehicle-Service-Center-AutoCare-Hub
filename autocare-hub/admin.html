@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin | AutoCare Hub</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"><i class="fas fa-car-side"></i></span>
+        <span class="logo-text">AutoCare<span class="accent">Hub</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="admin.html" class="active">Admin</a></li>
+        <li><a href="track-service.html">Track Service</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+      <div class="nav-user-menu" id="userMenu">
+        <a href="login.html" class="user-icon" id="userIcon">
+          👤
+        </a>
+        <div class="user-dropdown" id="userDropdown">
+          <div class="user-info">
+            <span id="userName">Guest</span>
+            <small id="userEmail">Not logged in</small>
+          </div>
+          <div class="user-actions">
+            <a href="dashboard.html" class="dropdown-item" id="dashboardLink" style="display:none">
+              <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="#" class="dropdown-item" id="logoutBtn" style="display:none">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+            <a href="login.html" class="dropdown-item" id="loginBtn">
+              <i class="fas fa-sign-in-alt"></i> Login
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="contact.html" class="nav-cta">Book Now</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <span class="section-tag">Admin Portal</span>
+      <h1>Admin <span class="gradient-text">Dashboard</span></h1>
+      <p>View and manage bookings and customer feedback.</p>
+    </div>
+  </section>
+
+  <!-- ADMIN TABS -->
+  <section class="admin-section section">
+    <div class="container">
+      <div class="admin-tabs">
+        <button class="tab-btn active" data-tab="bookings">
+          <i class="fas fa-calendar-check"></i> Bookings
+        </button>
+        <button class="tab-btn" data-tab="feedback">
+          <i class="fas fa-star"></i> Feedback
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMIN STATS -->
+  <section class="admin-section section">
+    <div class="container">
+      <div class="admin-stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+          <div class="stat-info">
+            <h3 id="totalBookings">0</h3>
+            <p>Total Bookings</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-clock"></i></div>
+          <div class="stat-info">
+            <h3 id="pendingBookings">0</h3>
+            <p>Pending</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+          <div class="stat-info">
+            <h3 id="completedBookings">0</h3>
+            <p>Completed</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-star"></i></div>
+          <div class="stat-info">
+            <h3 id="totalFeedback">0</h3>
+            <p>Total Feedback</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKINGS SECTION -->
+  <section class="admin-section section" id="bookingsSection">
+    <div class="container">
+      <div class="admin-header">
+        <h2>All <span class="gradient-text">Bookings</span></h2>
+        <button class="btn-primary" id="refreshBtn"><i class="fas fa-sync-alt"></i> Refresh</button>
+      </div>
+
+      <div class="admin-filters">
+        <select id="statusFilter">
+          <option value="all">All Status</option>
+          <option value="pending">Pending</option>
+          <option value="confirmed">Confirmed</option>
+          <option value="completed">Completed</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+      </div>
+
+      <div class="bookings-table-wrapper">
+        <table class="bookings-table">
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Service</th>
+              <th>Vehicle</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="bookingsTableBody">
+            <tr>
+              <td colspan="6" class="loading">
+                <i class="fas fa-spinner fa-spin"></i> Loading bookings...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEEDBACK SECTION -->
+  <section class="admin-section section" id="feedbackSection" style="display:none">
+    <div class="container">
+      <div class="admin-header">
+        <h2>Customer <span class="gradient-text">Feedback</span></h2>
+        <button class="btn-primary" id="refreshFeedbackBtn"><i class="fas fa-sync-alt"></i> Refresh</button>
+      </div>
+
+      <div class="admin-filters">
+        <select id="ratingFilter">
+          <option value="all">All Ratings</option>
+          <option value="5">5 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="3">3 Stars</option>
+          <option value="2">2 Stars</option>
+          <option value="1">1 Star</option>
+        </select>
+      </div>
+
+      <div class="feedback-list" id="feedbackList">
+        <div class="loading">
+          <i class="fas fa-spinner fa-spin"></i> Loading feedback...
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-car-side"></i></span><span class="logo-text">AutoCare<span class="accent">Hub</span></span></a>
+        <p>Your trusted partner for all vehicle care needs.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Vehicle Servicing</a></li>
+          <li><a href="services.html">Exterior Cleaning</a></li>
+          <li><a href="services.html">Interior Cleaning</a></li>
+          <li><a href="services.html">General Repairs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><i class="fas fa-phone"></i> +94 75 396 6006</li>
+          <li><i class="fas fa-envelope"></i> info@autocarehub.lk</li>
+          <li><i class="fas fa-location-dot"></i> Colombo 05, Sri Lanka</li>
+          <li><i class="fas fa-clock"></i> Mon–Sat: 8AM – 6PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 AutoCare Hub. All rights reserved.</p></div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

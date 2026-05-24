@@ -1,0 +1,157 @@
+// ===== DASHBOARD FUNCTIONALITY =====
+document.addEventListener('DOMContentLoaded', () => {
+  const customer = JSON.parse(localStorage.getItem('customer'));
+  const token = localStorage.getItem('token');
+
+  // Check if user is logged in
+  if (!customer || !token) {
+    window.location.href = 'login.html';
+    return;
+  }
+
+  // Update customer info
+  document.getElementById('customerName').textContent = `Welcome back, ${customer.name}!`;
+  document.getElementById('customerEmail').textContent = customer.email;
+
+  // Load customer bookings
+  loadCustomerBookings(customer.id);
+
+  // Logout functionality
+  document.getElementById('logoutBtn').addEventListener('click', () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('customer');
+    window.location.href = 'index.html';
+  });
+});
+
+// ===== LOAD CUSTOMER BOOKINGS =====
+async function loadCustomerBookings(customerId) {
+  try {
+    const response = await fetch(`http://localhost:5000/api/bookings/customer/${customerId}`);
+    const bookings = await response.json();
+
+    if (bookings.length === 0) {
+      document.getElementById('bookingsList').innerHTML = `
+        <div class="no-bookings">
+          <i class="fas fa-calendar-times"></i>
+          <p>No bookings yet. <a href="contact.html">Book your first service now!</a></p>
+        </div>
+      `;
+      updateStats(0, 0, 0);
+      return;
+    }
+
+    // Render bookings
+    const bookingsHTML = bookings.map(booking => `
+      <div class="booking-card">
+        <div class="booking-info">
+          <h4>${booking.service}</h4>
+          <p><i class="fas fa-car"></i> ${booking.vehicle}</p>
+          <p><i class="fas fa-calendar"></i> ${new Date(booking.date).toLocaleDateString()}</p>
+          <p><i class="fas fa-id-card"></i> ID: ${booking._id}</p>
+        </div>
+        <span class="booking-status ${booking.status}">${booking.status}</span>
+        <div class="booking-actions">
+          <a href="track-service.html" class="track-link">Track Service</a>
+          <button class="pdf-btn" onclick='generatePDF(${JSON.stringify(booking)})'>
+            <i class="fas fa-file-pdf"></i> Download PDF
+          </button>
+        </div>
+      </div>
+    `).join('');
+
+    document.getElementById('bookingsList').innerHTML = bookingsHTML;
+
+    // Update stats
+    const total = bookings.length;
+    const pending = bookings.filter(b => b.status === 'pending').length;
+    const completed = bookings.filter(b => b.status === 'completed').length;
+    updateStats(total, pending, completed);
+
+  } catch (error) {
+    console.error('Error loading bookings:', error);
+    document.getElementById('bookingsList').innerHTML = `
+      <div class="no-bookings">
+        <i class="fas fa-exclamation-circle"></i>
+        <p>Error loading bookings. Please try again later.</p>
+      </div>
+    `;
+  }
+}
+
+// ===== UPDATE STATS =====
+function updateStats(total, pending, completed) {
+  document.getElementById('totalBookings').textContent = total;
+  document.getElementById('pendingBookings').textContent = pending;
+  document.getElementById('completedBookings').textContent = completed;
+}
+
+// ===== GENERATE PDF REPORT =====
+function generatePDF(booking) {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  
+  // Add title
+  doc.setFontSize(22);
+  doc.setTextColor(14, 165, 233);
+  doc.text('AutoCare Hub', 105, 20, { align: 'center' });
+  
+  doc.setFontSize(16);
+  doc.setTextColor(0, 0, 0);
+  doc.text('Service Report', 105, 30, { align: 'center' });
+  
+  // Add line
+  doc.setDrawColor(200, 200, 200);
+  doc.line(20, 35, 190, 35);
+  
+  // Add booking details
+  doc.setFontSize(12);
+  let y = 50;
+  
+  doc.setFontSize(14);
+  doc.setTextColor(14, 165, 233);
+  doc.text('Booking Details', 20, y);
+  y += 10;
+  
+  doc.setFontSize(11);
+  doc.setTextColor(0, 0, 0);
+  doc.text(`Booking ID: ${booking._id}`, 20, y); y += 8;
+  doc.text(`Service: ${booking.service}`, 20, y); y += 8;
+  doc.text(`Vehicle: ${booking.vehicle}`, 20, y); y += 8;
+  doc.text(`Date: ${new Date(booking.date).toLocaleDateString()}`, 20, y); y += 8;
+  doc.text(`Status: ${booking.status.toUpperCase()}`, 20, y); y += 15;
+  
+  // Add customer details
+  doc.setFontSize(14);
+  doc.setTextColor(14, 165, 233);
+  doc.text('Customer Details', 20, y);
+  y += 10;
+  
+  doc.setFontSize(11);
+  doc.setTextColor(0, 0, 0);
+  doc.text(`Name: ${booking.name}`, 20, y); y += 8;
+  doc.text(`Email: ${booking.email}`, 20, y); y += 8;
+  doc.text(`Phone: ${booking.phone}`, 20, y); y += 15;
+  
+  // Add message if exists
+  if (booking.message) {
+    doc.setFontSize(14);
+    doc.setTextColor(14, 165, 233);
+    doc.text('Additional Notes', 20, y);
+    y += 10;
+    
+    doc.setFontSize(11);
+    doc.setTextColor(0, 0, 0);
+    const splitMessage = doc.splitTextToSize(booking.message, 170);
+    doc.text(splitMessage, 20, y);
+  }
+  
+  // Add footer
+  doc.setFontSize(10);
+  doc.setTextColor(128, 128, 128);
+  doc.text('Generated by AutoCare Hub', 105, 280, { align: 'center' });
+  doc.text(`Date: ${new Date().toLocaleDateString()}`, 105, 285, { align: 'center' });
+  
+  // Save PDF
+  doc.save(`autocare-report-${booking._id}.pdf`);
+}

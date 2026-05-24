@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | AutoCare Hub</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"><i class="fas fa-car-side"></i></span>
+        <span class="logo-text">AutoCare<span class="accent">Hub</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="track-service.html">Track Service</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+      <div class="nav-user-menu" id="userMenu">
+        <a href="login.html" class="user-icon" id="userIcon">
+          👤
+        </a>
+        <div class="user-dropdown" id="userDropdown">
+          <div class="user-info">
+            <span id="userName">Guest</span>
+            <small id="userEmail">Not logged in</small>
+          </div>
+          <div class="user-actions">
+            <a href="dashboard.html" class="dropdown-item" id="dashboardLink" style="display:none">
+              <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="#" class="dropdown-item" id="logoutBtn" style="display:none">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+            <a href="login.html" class="dropdown-item" id="loginBtn">
+              <i class="fas fa-sign-in-alt"></i> Login
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="contact.html" class="nav-cta">Book Now</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <span class="section-tag">Get In Touch</span>
+      <h1>Book an <span class="gradient-text">Appointment</span></h1>
+      <p>We'd love to hear from you. Book a service or just say hello.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section section">
+    <div class="container contact-grid">
+
+      <!-- FORM -->
+      <div class="contact-form-wrap">
+        <div id="loginPrompt" style="display:none">
+          <h2>Login to <span class="gradient-text">Book Service</span></h2>
+          <p>Please log in to book a service and manage your appointments.</p>
+          <a href="login.html" class="btn-primary" style="width:100%">Login <i class="fas fa-arrow-right"></i></a>
+          <p style="text-align:center; margin-top:1rem; color:var(--text-muted)">Don't have an account? <a href="register.html" class="auth-link">Register</a></p>
+        </div>
+        <div id="bookingForm">
+          <h2>Send Us a <span class="gradient-text">Message</span></h2>
+          <p>Fill in the form below and we'll get back to you within 24 hours.</p>
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" id="name" placeholder="Kasun Perera" required/>
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="phone" placeholder="+94 77 000 0000" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" id="email" placeholder="kasun@example.com" required/>
+            </div>
+            <div class="form-group">
+              <label>Service Required</label>
+              <select id="service" required>
+                <option value="" disabled selected>Select a service...</option>
+                <option>Vehicle Servicing</option>
+                <option>Exterior Cleaning</option>
+                <option>Interior Cleaning</option>
+                <option>General Repairs</option>
+                <option>Full Package (Premium)</option>
+                <option>Full Package (Ultimate)</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Vehicle Type</label>
+              <input type="text" id="vehicle" placeholder="e.g. Toyota Aqua 2019"/>
+            </div>
+            <div class="form-group">
+              <label>Preferred Date</label>
+              <input type="date" id="date" min=""/>
+            </div>
+            <div class="form-group">
+              <label>Message (optional)</label>
+              <textarea id="message" rows="4" placeholder="Tell us more about your vehicle and what you need..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%">Send Booking Request <i class="fas fa-paper-plane"></i></button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <i class="fas fa-circle-check"></i>
+            <h3>Request Sent!</h3>
+            <p>Thank you! We'll contact you shortly to confirm your appointment.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INFO -->
+      <div class="contact-info">
+        <h2>Find <span class="gradient-text">Us Here</span></h2>
+        <p>Visit our workshop or reach us through any of the channels below.</p>
+
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+            <div>
+              <strong>Location</strong>
+              <span>No. 45, Baseline Road, Colombo 05, Sri Lanka</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <strong>Phone</strong>
+              <span>+94 75 396 6006<br/>+94 33 225 0212</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <strong>Email</strong>
+              <span>info@autocarehub.lk<br/>bookings@autocarehub.lk</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <strong>Working Hours</strong>
+              <span>Monday – Friday: 8:00 AM – 6:00 PM<br/>Saturday: 8:00 AM – 4:00 PM<br/>Sunday: Closed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAP PLACEHOLDER -->
+        <div class="map-placeholder">
+          <div class="map-inner">
+            <i class="fas fa-map-location-dot"></i>
+            <p>AutoCare Hub, Colombo 05</p>
+            <a href="https://maps.google.com" target="_blank" class="btn-ghost" style="margin-top:1rem">Open in Google Maps <i class="fas fa-external-link"></i></a>
+          </div>
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="contact-social">
+          <h4>Follow Us</h4>
+          <div class="social-links big">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq section alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FAQ</span>
+        <h2>Common <span class="gradient-text">Questions</span></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">How long does a full service take? <i class="fas fa-plus"></i></button>
+          <div class="faq-a"><p>A basic service typically takes 1–2 hours. A full premium package including detailing can take 4–6 hours depending on the vehicle condition.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do I need to make an appointment? <i class="fas fa-plus"></i></button>
+          <div class="faq-a"><p>We recommend booking in advance to secure your preferred time slot, especially on weekends. Walk-ins are welcome but subject to availability.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you service all vehicle brands? <i class="fas fa-plus"></i></button>
+          <div class="faq-a"><p>Yes! We service all makes and models — Japanese, European, Korean and local vehicles. Our technicians are experienced with all major brands.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What payment methods do you accept? <i class="fas fa-plus"></i></button>
+          <div class="faq-a"><p>We accept cash, credit/debit cards, bank transfers and all major mobile payment apps including FriMi and PayHere.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Is there a warranty on your services? <i class="fas fa-plus"></i></button>
+          <div class="faq-a"><p>Yes, all our services come with a 30-day satisfaction guarantee. If you're not happy, we'll make it right at no extra cost.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-icon"><i class="fas fa-car-side"></i></span><span class="logo-text">AutoCare<span class="accent">Hub</span></span></a>
+        <p>Your trusted partner for all vehicle care needs.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Vehicle Servicing</a></li>
+          <li><a href="services.html">Exterior Cleaning</a></li>
+          <li><a href="services.html">Interior Cleaning</a></li>
+          <li><a href="services.html">General Repairs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><i class="fas fa-phone"></i> +94 75 396 6006</li>
+          <li><i class="fas fa-envelope"></i> info@autocarehub.lk</li>
+          <li><i class="fas fa-location-dot"></i> Colombo 05, Sri Lanka</li>
+          <li><i class="fas fa-clock"></i> Mon–Sat: 8AM – 6PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 AutoCare Hub. All rights reserved.</p></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
