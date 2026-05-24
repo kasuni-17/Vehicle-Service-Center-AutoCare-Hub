@@ -25,19 +25,21 @@ Easy search and filtering of service records
 ## Technologies Used
 
 HTML5
+
 CSS3
+
 JavaScript
 
 ## Project Structure
 
-autocare-hub/
+autocare-hub/ <br>
 │
-├── index.html # Home page
-├── about.html # About page
-├── services.html # Services page
-├── contact.html # Contact page
-├── style.css # Main stylesheet
-└── script.js # JavaScript functionality
+├── index.html # Home page <br>
+├── about.html # About page <br>
+├── services.html # Services page <br>
+├── contact.html # Contact page <br>
+├── style.css # Main stylesheet <br>
+└── script.js # JavaScript functionality  <br>
 
 ## Dashboard UI
 
@@ -46,22 +48,31 @@ autocare-hub/
 ## How to Run the Project
 
 Download or clone the project.
+
 Extract the project folder if downloaded as a ZIP file.
+
 Open the index.html file in any web browser.
 
 ## System Functionalities
 
 Display vehicle service information
+
 Provide contact details for customer communication
+
 Showcase available vehicle maintenance services
+
 Improve user interaction with responsive web design
 
 ## Future Improvements
 
 Add user authentication system
+
 Add online booking functionality
+
 Integrate database support using MongoDB/MySQL
+
 Add payment gateway integration
+
 Implement admin dashboard for service management
 
 ## Learning Outcomes
@@ -69,9 +80,13 @@ Implement admin dashboard for service management
 This project helped improve knowledge in:
 
 Frontend web development
+
 Website structuring using HTML
+
 Styling and responsive design using CSS
+
 Interactive functionality using JavaScript
+
 Basic software project organization
 
 Author
