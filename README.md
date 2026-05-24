@@ -1,4 +1,4 @@
-AutoCare Hub
+## 🔧🚘AutoCare Hub🚘🔧
 
 <img src="AutoCareHub.png" width="700">
 
@@ -89,6 +89,6 @@ Interactive functionality using JavaScript
 
 Basic software project organization
 
-Author
+👤 Author 👤
 
 A.P.K. Lakshika
