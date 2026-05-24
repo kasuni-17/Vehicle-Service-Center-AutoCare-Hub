@@ -9,11 +9,17 @@ AutoCare Hub is a web-based Vehicle Service Center Management System designed to
 ## Features
 
 Service booking and appointment management  
+
 Vehicle service tracking system (real-time status updates)  
+
 Customer and vehicle record management  
+
 Service history tracking  
-PDF report generation for invoices and service details  
-Admin dashboard for managing workshop operations  
+
+PDF report generation for invoices and service details 
+
+Admin dashboard for managing workshop operations 
+
 Easy search and filtering of service records
 
 ## Technologies Used
